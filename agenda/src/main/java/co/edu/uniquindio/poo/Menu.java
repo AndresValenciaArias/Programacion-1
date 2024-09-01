@@ -49,6 +49,8 @@ public class Menu {
         boolean gestionContactos = true;
         boolean gestionGrupos = true;
         boolean gestionReuniones = true;
+        boolean ejecutar = true;
+        while (ejecutar){
         switch (opcion) {
             case 1:
                 while(gestionContactos) {
@@ -134,12 +136,14 @@ public class Menu {
             break;
             case 4:
                 System.out.println("Saliendo...");
+                ejecutar = false;
                 break;
             default:
                 System.out.println("Opcion no valida");
                 break;
         }
     }
+}
 
     /**
      * Metodo para crear un contacto
