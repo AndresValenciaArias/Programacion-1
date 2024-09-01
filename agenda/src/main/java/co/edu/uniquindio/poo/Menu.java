@@ -230,7 +230,7 @@ public class Menu {
      * @param contactos
      */
     private void mostrarReuniones(List<Reunion> reuniones,List<Contacto> listaContactos ){
-        System.out.println("----Lista de Grupos----");
+        System.out.println("----Lista de Reuniones----");
         for (Reunion reunion : reuniones) {
             System.out.println("Descripcion: "+ reunion.getDescripcion());
             System.out.println("Fecha: "+ reunion.getFecha());
