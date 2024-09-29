@@ -31,34 +31,6 @@ public class Biblioteca {
         libros = new LinkedList<>();
     }
 
-    public void autoCarga() {
-        Estudiante estudiante = new Estudiante("Juan", "1030", "juan@", 317, 17);
-        Estudiante estudiante2 = new Estudiante("Pipe", "1090", "pipe@", 311, 19);
-        estudiantes.add(estudiante);
-        estudiantes.add(estudiante2);
-        Bibliotecario bibliotecario = new Bibliotecario("Julian", "1080", "juan@", 340, 1000, 5);
-        Bibliotecario bibliotecario2 = new Bibliotecario("Pedro", "1040", "pipe@", 315, 2000, 1);
-        bibliotecarios.add(bibliotecario);
-        bibliotecarios.add(bibliotecario2);
-        Libro libro = new Libro("101", "0001", "Gabriel Garcia Marquez", "Tres editores", "Cien anios de Soledad",
-                LocalDate.of(1967, 5, 1), 10);
-        libro.cambiarEstado();
-        Libro libro2 = new Libro("102", "0011", "George Orwell", "Tres editores", "1984",
-                LocalDate.of(1949, 6, 8), 5);
-        libro2.cambiarEstado();
-        libros.add(libro);
-        libros.add(libro2);
-        Prestamo prestamo = new Prestamo(LocalDate.of(2024, 9, 28), LocalDate.of(2024, 10, 28),
-                1000, "1001", estudiante, bibliotecario);
-        Prestamo prestamo2 = new Prestamo(LocalDate.of(2024, 9, 28), LocalDate.of(2025, 9, 28),
-                1000, "1002", estudiante2, bibliotecario2);
-        Prestamo prestamo3 = new Prestamo(LocalDate.of(2024, 9, 28), LocalDate.of(2025, 9, 28),
-                1000, "1003", estudiante2, bibliotecario2);
-        prestamos.add(prestamo);
-        prestamos.add(prestamo2);
-        prestamos.add(prestamo3);
-    }
-
     /**
      * Metodo para el menu de biblioteca
      */
