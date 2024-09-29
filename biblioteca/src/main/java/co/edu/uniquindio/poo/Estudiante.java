@@ -9,6 +9,7 @@ public class Estudiante extends Persona {
 
     /**
      * Metodo constructor de la clase Estudiante
+     * 
      * @param nombre
      * @param cedula
      * @param correo
@@ -23,14 +24,16 @@ public class Estudiante extends Persona {
 
     /**
      * Metodo para agreagar un prestamo al estudiante
+     * 
      * @param prestamo
      */
-    public void agregarPrestamo(Prestamo prestamo){
+    public void agregarPrestamo(Prestamo prestamo) {
         prestamos.add(prestamo);
     }
 
     /**
      * Metodo para obtener la edad
+     * 
      * @return edad
      */
     public int getEdad() {
@@ -39,6 +42,7 @@ public class Estudiante extends Persona {
 
     /**
      * Metodo para cambiar la edad
+     * 
      * @param edad
      */
     public void setEdad(int edad) {
@@ -47,6 +51,7 @@ public class Estudiante extends Persona {
 
     /**
      * Metodo para obtener la coleccion de prestamos
+     * 
      * @return prestamos
      */
     public Collection<Prestamo> getPrestamos() {
@@ -55,6 +60,7 @@ public class Estudiante extends Persona {
 
     /**
      * Metodo para cambiar la coleccion de prestamos
+     * 
      * @param prestamos
      */
     public void setPrestamos(Collection<Prestamo> prestamos) {
@@ -63,9 +69,7 @@ public class Estudiante extends Persona {
 
     @Override
     public String toString() {
-        return "Estudiante [edad=" + edad + ", prestamos=" + prestamos + "]";
+        return "Estudiante [edad=" + edad + "]";
     }
 
-    
-   
 }

@@ -6,6 +6,7 @@ public class Persona {
 
     /**
      * Metodo constructor de la clase persona
+     * 
      * @param nombre
      * @param cedula
      * @param correo
@@ -17,9 +18,10 @@ public class Persona {
         this.correo = correo;
         this.telefono = telefono;
     }
-    
+
     /**
      * Metodo para obtener el nombre de la persona
+     * 
      * @return nombre
      */
     public String getNombre() {
@@ -28,14 +30,16 @@ public class Persona {
 
     /**
      * Metodo para cambiar el nombre
+     * 
      * @param nombre
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     /**
      * Metodo para obtener la cedula de la persona
+     * 
      * @return cedula
      */
     public String getCedula() {
@@ -44,14 +48,16 @@ public class Persona {
 
     /**
      * Metodo para cambiar la cedula
+     * 
      * @param cedula
      */
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
-    
+
     /**
      * Metodo para obtener el correo de la persona
+     * 
      * @return correo
      */
     public String getCorreo() {
@@ -60,14 +66,16 @@ public class Persona {
 
     /**
      * Metodo para cambiar el correo
+     * 
      * @param correo
      */
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    
+
     /**
      * Metodo para obtener el telefono de la persona
+     * 
      * @return telefono
      */
     public int getTelefono() {
@@ -76,6 +84,7 @@ public class Persona {
 
     /**
      * Metodo para cambiar el telefono
+     * 
      * @param telefono
      */
     public void setTelefono(int telefono) {

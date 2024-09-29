@@ -10,6 +10,7 @@ public class Bibliotecario extends Persona {
 
     /**
      * Metodo constructor de la clase bibliotecario
+     * 
      * @param nombre
      * @param cedula
      * @param correo
@@ -26,39 +27,46 @@ public class Bibliotecario extends Persona {
 
     /**
      * Metodo para agreagar un prestamo al bibliotecario
+     * 
      * @param prestamo
      */
-    public void agregarPrestamo(Prestamo prestamo){
+    public void agregarPrestamo(Prestamo prestamo) {
         prestamos.add(prestamo);
     }
 
     /**
      * Metodo para mostrar la cantidad de prestamos realizados por un bibliotecario
      */
-    public void cantidadPrestamos(){
-        System.out.println("La cantidad de prestamos realizados son"+prestamos.size());
+    public String cantidadPrestamos() {
+        int contador = 0;
+        for (@SuppressWarnings("unused") Prestamo prestamo : prestamos) {
+            contador++;
+        }
+        String mensaje = "\t Cantidad de Prestamos: " + contador;
+        return mensaje;
     }
 
     /**
      * Metodo para calcular el pago del bibliotecario
+     * 
      * @return El pago del bibliotecario
      */
-    public double calcularPago(){
-        DetallePrestamo detallePrestamos = new DetallePrestamo();
-        double valorPrestamo = detallePrestamos.subtotal();
-        double valorPagoPorPrestamo= valorPrestamo * 0.2;
-        double contador = 0;
-        for (Prestamo prestamo : prestamos) {
-            contador += 1;
+    public double calcularPago(Bibliotecario bibliotecario) {
+        double bonificacionPrestamos = 0;
+        for (Prestamo prestamo : bibliotecario.getPrestamos()) {
+            int valorPrestamo = prestamo.total();
+            double bonificacionPorPrestamo = valorPrestamo * 0.2;
+            bonificacionPrestamos += bonificacionPorPrestamo;
         }
-        double valorTotalPorPrestamos = valorPagoPorPrestamo * contador;
-        double bonificacion = (valorTotalPorPrestamos * 0.02) + antiguedad;
-        double pago = valorTotalPorPrestamos + bonificacion;
-        return pago;
+        double bonificacionPorAño = bonificacionPrestamos * 0.02;
+        double parcialPago = bonificacionPrestamos + (bonificacionPorAño * antiguedad);
+        double totalPago = parcialPago + salario;
+        return totalPago;
     }
 
     /**
      * Metodo para obtener el salario
+     * 
      * @return Salario
      */
     public double getSalario() {
@@ -67,6 +75,7 @@ public class Bibliotecario extends Persona {
 
     /**
      * Metodo para cambiar el valor del salario
+     * 
      * @param salario
      */
     public void setSalario(double salario) {
@@ -75,6 +84,7 @@ public class Bibliotecario extends Persona {
 
     /**
      * Metodo para obtener los años de antiguedad
+     * 
      * @return Antiguedad
      */
     public int getAntiguedad() {
@@ -82,7 +92,8 @@ public class Bibliotecario extends Persona {
     }
 
     /**
-     * Metodo para cabiar el valor de la antiguedad
+     * Metodo para cambiar el valor de la antiguedad
+     * 
      * @param antiguedad
      */
     public void setAntiguedad(int antiguedad) {
@@ -91,6 +102,7 @@ public class Bibliotecario extends Persona {
 
     /**
      * Metodo para obtener la coleccion de prestamos
+     * 
      * @return Prestamos
      */
     public Collection<Prestamo> getPrestamos() {
@@ -99,6 +111,7 @@ public class Bibliotecario extends Persona {
 
     /**
      * Metodo para cambiar el valor de la coleccion de prestamos
+     * 
      * @param prestamos
      */
     public void setPrestamos(Collection<Prestamo> prestamos) {

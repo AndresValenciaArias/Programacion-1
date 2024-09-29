@@ -8,27 +8,27 @@ public class Libro {
     private LocalDate fechaPublicacion;
     private boolean estado;
     private int unidadesDisponibles;
-    
+
     /**
      * Metodo constructor de la clase libro
+     * 
      * @param codigo
      * @param isbn
      * @param autor
      * @param editorial
      * @param titulo
      * @param fechaPublicacion
-     * @param estado
      * @param unidadesDisponibles
      */
-    public Libro(String codigo, String isbn, String autor, String editorial, String titulo, LocalDate fechaPublicacion, boolean estado, int unidadesDisponibles){
-        this.codigo=codigo;
-        this.isbn=isbn;
-        this.autor=autor;
-        this.editorial=editorial;
-        this.titulo=titulo;
-        this.fechaPublicacion=fechaPublicacion;
-        this.estado=estado;
-        this.unidadesDisponibles=unidadesDisponibles;
+    public Libro(String codigo, String isbn, String autor, String editorial, String titulo, LocalDate fechaPublicacion,
+            int unidadesDisponibles) {
+        this.codigo = codigo;
+        this.isbn = isbn;
+        this.autor = autor;
+        this.editorial = editorial;
+        this.titulo = titulo;
+        this.fechaPublicacion = fechaPublicacion;
+        this.unidadesDisponibles = unidadesDisponibles;
     }
 
     /**
@@ -44,6 +44,7 @@ public class Libro {
 
     /**
      * Metodo para obtener el codigo del libro
+     * 
      * @return codigo del libro
      */
     public String getCodigo() {
@@ -52,6 +53,7 @@ public class Libro {
 
     /**
      * Metodo para cambiar el codigo del libro
+     * 
      * @param codigo
      */
     public void setCodigo(String codigo) {
@@ -60,6 +62,7 @@ public class Libro {
 
     /**
      * Metodo para obtener el isbn del libro
+     * 
      * @return isbn del libro
      */
     public String getIsbn() {
@@ -68,6 +71,7 @@ public class Libro {
 
     /**
      * Metodo para cambiar el isbn del libro
+     * 
      * @param isbn
      */
     public void setIsbn(String isbn) {
@@ -76,6 +80,7 @@ public class Libro {
 
     /**
      * Metodo para obtener el autor
+     * 
      * @return autor
      */
     public String getAutor() {
@@ -84,6 +89,7 @@ public class Libro {
 
     /**
      * Metodo para cambiar el autor
+     * 
      * @param autor
      */
     public void setAutor(String autor) {
@@ -92,6 +98,7 @@ public class Libro {
 
     /**
      * Metodo para obtener la editorial
+     * 
      * @return editorial
      */
     public String getEditorial() {
@@ -100,6 +107,7 @@ public class Libro {
 
     /**
      * Metodo para cambiar la editorial
+     * 
      * @param editorial
      */
     public void setEditorial(String editorial) {
@@ -108,6 +116,7 @@ public class Libro {
 
     /**
      * Metodo para obtener el titulo del libro
+     * 
      * @return titulo del libro
      */
     public String getTitulo() {
@@ -116,6 +125,7 @@ public class Libro {
 
     /**
      * Metodo para cambiar el titulo del libro
+     * 
      * @param titulo
      */
     public void setTitulo(String titulo) {
@@ -124,6 +134,7 @@ public class Libro {
 
     /**
      * Metodo para obtener la fecha de publicacion
+     * 
      * @return
      */
     public LocalDate getFechaPublicacion() {
@@ -132,6 +143,7 @@ public class Libro {
 
     /**
      * Metodo para cambiar la fecha de publicacion
+     * 
      * @param fechaPublicacion
      */
     public void setFechaPublicacion(LocalDate fechaPublicacion) {
@@ -140,6 +152,7 @@ public class Libro {
 
     /**
      * Metodo para obtener el estado del libro
+     * 
      * @return estado
      */
     public boolean getEstado() {
@@ -148,6 +161,7 @@ public class Libro {
 
     /**
      * Metodo para cambiar el estado del libro
+     * 
      * @param estado
      */
     public void setEstado(boolean estado) {
@@ -156,6 +170,7 @@ public class Libro {
 
     /**
      * Metodo para obtener las unidades disponibles
+     * 
      * @return unidades disponibles
      */
     public int getUnidadesDisponibles() {
@@ -164,6 +179,7 @@ public class Libro {
 
     /**
      * Metodo para cambiar las unidades disponibles
+     * 
      * @param unidadesDisponibles
      */
     public void setUnidadesDisponibles(int unidadesDisponibles) {
@@ -177,6 +193,4 @@ public class Libro {
                 + ", unidadesDisponibles=" + unidadesDisponibles + "]";
     }
 
-    
-    
 }

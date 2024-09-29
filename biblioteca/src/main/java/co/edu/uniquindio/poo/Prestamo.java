@@ -1,6 +1,5 @@
 package co.edu.uniquindio.poo;
 
-import java.time.Period;
 import java.time.LocalDate;
 import java.util.LinkedList;
 
@@ -13,14 +12,8 @@ public class Prestamo {
     private LinkedList<DetallePrestamo> detallePrestamos;
 
     /**
-     * Metodo para crear una doble instancia de la clase
-     */
-    public Prestamo(){
-
-    }
-
-    /**
      * Metodo constructor de la clase prestamo
+     * 
      * @param fechaPrestamo
      * @param fechaEntrega
      * @param costoDia
@@ -36,34 +29,36 @@ public class Prestamo {
         this.codigo = codigo;
         this.estudiante = estudiante;
         this.bibliotecario = bibliotecario;
+        bibliotecario.agregarPrestamo(this);
+        estudiante.agregarPrestamo(this);
         detallePrestamos = new LinkedList<>();
     }
 
     /**
-     * Metodo para calcular los dias que dura un prestamo
-     * @return dias
-     */
-    public int calcularDiasPrestamo() {
-        Period period = Period.between(fechaPrestamo, fechaEntrega);
-        int dias = period.getYears() * 365 + period.getMonths() * 30 + period.getDays();
-        return dias;
-    }
-
-    /**
      * Metodo para calcular el valor total del prestamo
+     * 
      * @return valor total de los prestamos
      */
-    public int total(){
+    public int total() {
         int contador = 0;
-        for (DetallePrestamo detallePrestamo : detallePrestamos ) {
-            double subTotal = detallePrestamo.subtotal();
+        for (DetallePrestamo detallePrestamo : detallePrestamos) {
+            double subTotal = detallePrestamo.subtotal(getCostoDia(), getFechaPrestamo(), getFechaEntrega());
             contador += subTotal;
         }
         return contador;
     }
 
     /**
+     * Metodo para agregar un detalle prestamo al prestamo
+     * @param detallePrestamo
+     */
+    public void agregarDetallePrestamo(DetallePrestamo detallePrestamo) {
+        detallePrestamos.add(detallePrestamo);
+    }
+
+    /**
      * Metodo para obtener la fecha del prestamo
+     * 
      * @return fecha del prestamo
      */
     public LocalDate getFechaPrestamo() {
@@ -72,6 +67,7 @@ public class Prestamo {
 
     /**
      * Metodo para cambiar la fecha del prestamo
+     * 
      * @param fechaPrestamo
      */
     public void setFechaPrestamo(LocalDate fechaPrestamo) {
@@ -80,6 +76,7 @@ public class Prestamo {
 
     /**
      * Metodo para obtener la fecha de entrega
+     * 
      * @return fecha de entrega
      */
     public LocalDate getFechaEntrega() {
@@ -88,6 +85,7 @@ public class Prestamo {
 
     /**
      * Meetodo para cambiar la fecha de entrega
+     * 
      * @param fechaEntrega
      */
     public void setFechaEntrega(LocalDate fechaEntrega) {
@@ -96,6 +94,7 @@ public class Prestamo {
 
     /**
      * Metodo para obtener el costo del prestamo por dia
+     * 
      * @return costo por dia
      */
     public double getCostoDia() {
@@ -104,6 +103,7 @@ public class Prestamo {
 
     /**
      * Metodo para cambiar el costo del prestamo por dia
+     * 
      * @param costoDia
      */
     public void setCostoDia(double costoDia) {
@@ -112,6 +112,7 @@ public class Prestamo {
 
     /**
      * Metodo para obtener el codigo del prestamo
+     * 
      * @return codifo del prestamo
      */
     public String getCodigo() {
@@ -120,6 +121,7 @@ public class Prestamo {
 
     /**
      * Metodo para cambiar el codigo del prestamo
+     * 
      * @param codigo
      */
     public void setCodigo(String codigo) {
@@ -128,6 +130,7 @@ public class Prestamo {
 
     /**
      * Metodo para obtener un estudiante
+     * 
      * @return estudiante
      */
     public Estudiante getEstudiante() {
@@ -136,6 +139,7 @@ public class Prestamo {
 
     /**
      * Metodo para cambiar el valor del estudiante
+     * 
      * @param estudiante
      */
     public void setEstudiante(Estudiante estudiante) {
@@ -144,6 +148,7 @@ public class Prestamo {
 
     /**
      * Metodo para obtener un bibliotecario
+     * 
      * @return
      */
     public Bibliotecario getBibliotecario() {
@@ -152,6 +157,7 @@ public class Prestamo {
 
     /**
      * Metodo para cambiar el valor del bibliotecario
+     * 
      * @param bibliotecario
      */
     public void setBibliotecario(Bibliotecario bibliotecario) {
@@ -160,6 +166,7 @@ public class Prestamo {
 
     /**
      * Metodo para obtener la lista de los detalles del prestamo
+     * 
      * @return
      */
     public LinkedList<DetallePrestamo> getDetallePrestamos() {
@@ -168,6 +175,7 @@ public class Prestamo {
 
     /**
      * Metodo para cambiar la lista de los detalle del prestamo
+     * 
      * @param detallePrestamos
      */
     public void setDetallePrestamos(LinkedList<DetallePrestamo> detallePrestamos) {
@@ -180,5 +188,4 @@ public class Prestamo {
                 + ", codigo=" + codigo + ", estudiante=" + estudiante + ", bibliotecario=" + bibliotecario
                 + ", detallePrestamos=" + detallePrestamos + "]";
     }
-
 }
